@@ -4,6 +4,7 @@ This project aims to provide a unified vector database solution for multiple AI 
 
 ## Core Architecture
 
+- **Ingestion Scripts**: Runs daily and takes data from projects' databases
 - **Vector Database**: A single container instance serving as the storage layer, using namespaces to maintain data isolation.
 - **Central Processing Engine**: A central container responsible for:
     - Receiving user queries.
