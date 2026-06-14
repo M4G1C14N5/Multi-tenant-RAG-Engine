@@ -7,3 +7,14 @@ services:
       - "6334:6334"
     volumes:
       - ./qdrant_storage:/qdrant/storage
+
+  starfolio-ingest:
+    image: python:3.14-slim
+    profiles: ["ingestion"]
+    working_dir: /app
+    environment:
+      STARFOLIO_DIR: /mnt/starfolio
+    volumes:
+      - ./:/app:ro
+      - /home/pluto/starfolio:/mnt/starfolio:ro
+    command: ["python", "/app/scripts/test_starfolio_preprocessing.py"]
