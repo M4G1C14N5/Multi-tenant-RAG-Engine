@@ -17,4 +17,4 @@ services:
     volumes:
       - ./:/app:ro
       - /home/pluto/starfolio:/mnt/starfolio:ro
-    command: ["python", "/app/scripts/test_starfolio_preprocessing.py"]
+    command: ["python", "/app/ingestion/starfolio_ingestion.py"]
